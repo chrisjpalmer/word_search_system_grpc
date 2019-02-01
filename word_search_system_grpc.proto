@@ -15,10 +15,10 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "io.grpc.examples.wordsearchsystem";
-option java_outer_classname = "WordSearchSystemProto";
+option java_package = "io.grpc.examples.wordsearchsystemgrpc";
+option java_outer_classname = "WordSearchSystemGrpcProto";
 
-package wordsearchsystem;
+package wordsearchsystemgrpc;
 
 // The greeting service definition.
 service WordSearchSystem {

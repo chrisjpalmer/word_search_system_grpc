@@ -1,11 +1,12 @@
 ## Word Search System GRPC
-This repository contains the protoc definitions for the word_search_system grpc standard.
+Refer to general documentation here: https://github.com/chrisjpalmer/word_search
 
 ## Using this repository
 ### Compile
 If you update the protocol buffers, you must rebuild the compiled golang source:
 ```sh
 protoc -I ./ ./word_search_system_grpc.proto --go_out=plugins=grpc:./
+dep ensure # Make sure the dependency tree is good
 ```
 
 To do this you need to have protoc compiler installed. If you don't have this installed, follow these instructions: https://grpc.io/docs/quickstart/go.html
@@ -19,6 +20,5 @@ git push; git push --tags
 ```
 
 #### Commit Rules
-- If you are removing fields from the protocol buffers, this is a breaking change and you must increase the major version number.
-- If you are adding fields only, you may increase the minor version number.
-- If you are changing a dependency to do with grpc, you must increase the patch version number.
+Someone should establish some versioning rules about when to change major, minor and patch values based on what changes in the protocol implementation.
+For instance, removing fields is quite serious so that should probably be a breaking change. However adding fields might be a minor change.
